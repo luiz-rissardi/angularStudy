@@ -1,0 +1,47 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+header{
+    width: 100%;
+    background-color: $white;
+    color: $dark;
+    display: flex;
+    align-items: center;
+    height: 15vh;
+    margin: 0;
+    padding-inline: 5vw;
+
+    img{
+        display: flex;
+        width: 100px;
+        @include breakpoint(mobile-only){
+            display: none;
+        }
+    }
+}
+
+.link-text{
+    color: $lightPink !important;
+    font-size: 1rem;
+    text-shadow:2px 2px 4px $lightWhite;
+
+    &:hover + .line{
+        width: 100% !important;
+        transition: 300ms ease-in;
+    }
+
+    &:focus + .line{
+        width: 100% !important;
+    }
+
+    @include breakpoint(mobile-only){
+        font-size: 0.8rem;
+    }
+}
+
+.line{
+    height: 3px;
+    width: 0%;
+    background-color: $lightOrange;
+    transition: 300ms ease-in;
+}

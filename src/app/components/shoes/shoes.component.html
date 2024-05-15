@@ -1,0 +1,23 @@
+<section class="d-flex flex-column">
+    <form class="d-flex ms-auto w-50">
+        <fieldset class="form-group w-100">
+            <label for="search" class="form-label"> pesquisar por nome: </label>
+            <input type="text" id="search" class="form-control">
+        </fieldset>
+    </form>
+
+    <div class="shoes">
+        @defer (when this.shoes != undefined) {
+        <ul>
+            <li *ngFor="let shoe of this.shoes">
+                <p>
+                    {{ shoe.name }}
+                </p>
+            </li>
+        </ul>
+        }@placeholder {
+        <span> carregando... </span>
+        }
+    </div>
+
+</section>

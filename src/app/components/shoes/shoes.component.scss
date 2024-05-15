@@ -1,0 +1,10 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+section{
+    width: 90%;
+    margin: 5%;
+    border-radius: 10px;
+    padding: 5%;
+    background-color: $lightWhite;
+}

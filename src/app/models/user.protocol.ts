@@ -1,11 +1,8 @@
 
 
-export type User = {
-    userName: string,
-    age: number,
-}
-
-export interface BaseRepository {
-    insert(user: User): Promise<User>;
-    find(): Promise< User[]>;
+export type Shoe = {
+    name: string;
+    price: number;
+    image: string;
+    id:number;
 }

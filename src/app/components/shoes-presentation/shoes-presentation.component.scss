@@ -1,0 +1,24 @@
+@import "../../../styles/mixins.scss";
+
+section{
+    width: 90%;
+    margin: 5%;
+
+    p{
+        @include breakpoint(mobile-only){
+            font-size: 0.9rem;
+        }
+    }
+}
+
+img{
+    width: 300px;
+    height: auto;
+    text-align: center;
+    @include breakpoint(mobile-only){
+        margin-top: 50px;
+        width: 180px;
+        height: 200px;
+        text-align: justify;
+    }
+}
