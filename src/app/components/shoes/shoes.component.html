@@ -8,16 +8,14 @@
 
     <div class="shoes">
         @defer (when this.shoes != undefined) {
-        <ul>
-            <li *ngFor="let shoe of this.shoes">
-                <p>
-                    {{ shoe.name }}
-                </p>
-            </li>
-        </ul>
-        }@placeholder {
+            <app-shoes-data [shoes]="this.shoes" ></app-shoes-data>
+        }@placeholder(minimum 100ms;){
         <span> carregando... </span>
         }
+        <!-- @loading(minimum 1200ms;){
+            <span> carregando animado ... </span>
+        } -->
     </div>
 
 </section>
+

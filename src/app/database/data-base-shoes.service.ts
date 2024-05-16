@@ -61,7 +61,7 @@ export class DataBaseShoesService {
   constructor() { }
 
   findOne(id: number): Promise<Shoe | null> {
-    return Promise.resolve(this.shoes.filter(el => el.id === id)[0])
+    return Promise.resolve(this.shoes.filter(el => el.id == id)[0])
   }
 
   findMany(): Promise<Shoe[]> {
@@ -69,7 +69,7 @@ export class DataBaseShoesService {
       const timeoutId = setTimeout(() => {
         clearTimeout(timeoutId)
         resolve(this.shoes)
-      }, 3000);
+      }, 2000);
     });
   }
 

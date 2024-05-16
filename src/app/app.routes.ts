@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { ShoeDetailComponent } from './components/shoe-detail/shoe-detail.component';
 
 export const routes: Routes = [
     {
@@ -9,7 +8,7 @@ export const routes: Routes = [
         component:HomeComponent
     }, 
     {
-        path:"teste",
-        component:FooterComponent
+        path:"shoe/:id",
+        component:ShoeDetailComponent
     }  
 ];

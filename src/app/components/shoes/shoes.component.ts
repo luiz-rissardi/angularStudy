@@ -1,26 +1,24 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Shoe } from '../../models/user.protocol';
-import { CommonModule } from '@angular/common';
+import { ShoesDataComponent } from '../shoes-data/shoes-data.component';
 
 
 @Component({
   selector: 'app-shoes',
   standalone: true,
-  imports: [CommonModule],
+  imports: [ShoesDataComponent],
   templateUrl: './shoes.component.html',
   styleUrl: './shoes.component.scss'
 })
 export class ShoesComponent implements OnInit {
   protected shoes!: Shoe[];
 
-  constructor() {
+  ngOnInit() {
     const worker = new Worker(new URL('../../app.worker', import.meta.url))
     worker.onmessage = ({data}) => {
       this.shoes = data
     };
-    worker.postMessage("");
-  }
+    worker.postMessage({type:"getAll"});
 
-  async ngOnInit() {
   }
 }
