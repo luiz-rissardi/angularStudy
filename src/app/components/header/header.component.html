@@ -2,17 +2,13 @@
     <img src="../../../assets/stars.png" alt="logotipo">
 
     <nav class="navbar navbar-expand-lg w-100">
-        <ul class="navbar-nav w-100 ms-md-auto flex-row justify-content-between justify-content-lg-end">
+        <ul class="navbar-nav w-100 ms-md-auto flex-row justify-content-around justify-content-lg-end">
             <li class="nav-item">
                 <a class="nav-link link-text active"  routerLink="/home" > pagina pricipal </a>
                 <div class="line"></div>
             </li>
             <li class="nav-item">
-                <a class="nav-link link-text" routerLink="/teste"> produtos </a>
-                <div class="line"></div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link link-text" routerLink="/home"> sobre nós </a>
+                <a class="nav-link link-text" (click)="scrollToProducts()"> produtos </a>
                 <div class="line"></div>
             </li>
         </ul>

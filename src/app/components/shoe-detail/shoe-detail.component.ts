@@ -15,9 +15,7 @@ export class ShoeDetailComponent implements OnInit{
 
   ngOnInit(): void {
     const worker = new Worker(new URL('../../app.worker', import.meta.url))
-    console.log(worker);
     worker.onmessage = ({data}) => {
-      console.log(data);
       this.shoe = data
     };
     worker.postMessage({type:"getOne",id:this.id});

@@ -1,0 +1,22 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+.card-style {
+    border: 0;
+    background-image: linear-gradient(to top, $darkPink, $lightOrange);
+    box-shadow: 14px 14px 28px #bebebe,
+        -14px -14px 28px #ffffff;
+
+    @include breakpoint(mobile-only){
+        width: 90% !important;
+    }
+}
+
+.btn-personality{
+    border: 0;
+    width: 80%;
+    height: 6vh;
+    color: $dark;
+    background-image: linear-gradient(to left, $darkOrange, $lightOrange 70%, $darkOrange);
+    border-radius: 40px;
+}

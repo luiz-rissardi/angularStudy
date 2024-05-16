@@ -1,7 +1,15 @@
-
-
-<section class="container">
+<section class="container d-flex">
     @defer(when this.shoe != undefined ) {
-       <h1 class="text-dark"> {{ shoe.name }}</h1>
+    <div class="card card-style m-auto" style="height: 80vh; width: 35%;">
+        <img [src]="shoe.image" class="img-card-top" height="50%" alt="shoe image">
+        <div class="card-body text-white">
+            <h2> {{ shoe.name }} </h2>
+            <p> um preço acesível para <strong>TODOS </strong> </p>
+            <p>valor : {{ shoe.price }}</p>
+        </div>
+        <div class="card-footer d-flex">
+            <button type="button" class="btn-personality m-auto"> comprar </button>
+        </div>
+    </div>
     }
 </section>
