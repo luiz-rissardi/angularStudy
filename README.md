@@ -30,3 +30,40 @@ COMPONENTES INDEMPEDENTES
 
 usei para aprender e a usar eles, um componente indempendente usa os modulos que necessitam 
 
+ - Signals
+
+      usei signlas para aprender um pouco mais das novas features que foram implementadas
+      nas ultimas versões do angular 16 e 17
+
+      -setar o signal:
+       - uso do "set" para um novo valor
+       - uso do "update" que recebe uma função para retornar um valor com base no valor anterior
+      
+      - pegar o signal: exemplo
+       - {
+         class Teste{
+            private t1 = signal("luiz");
+
+            method1(){
+               console.log(this.t1())
+            }
+         }
+       }
+
+       ferramentas do siganl: computed e effect
+
+       ambos são reativos aos "signals" que tem dentro dele, quando ele identifica que tem um
+       signal dentro dele e o signal mudou, ele executa a função dele novamente
+
+       ex com computed
+
+       const teste = computed(() => {
+            return this.filterByQuery(this.query())
+         })
+
+      esse computed irá executar toda vez que o sinal "query" mudar mas só executará 
+      se ele for usado ex "teste()"
+
+      effect funciona da mesma forma mas não precisa ser chamado ali para ser executado
+      , como é um efeito ele não precisa ser colocado em uma variável e chamado pra funcionar
+
