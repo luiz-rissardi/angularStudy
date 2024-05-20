@@ -1,5 +1,5 @@
 <ul class="d-flex flex-column flex-md-row flex-wrap w-100">
-    <li *ngFor="let shoe of this.shoes" class="m-auto my-2 shoe">
+    <li *ngFor="let shoe of this.shoes()" class="m-auto my-2 shoe">
         <a [routerLink]="['/shoe',shoe.id]">
             <div class="card card-style" style="height: 70vh">
                 <img [src]="shoe.image" class="card-img-top" height="50%" alt="sneaker">

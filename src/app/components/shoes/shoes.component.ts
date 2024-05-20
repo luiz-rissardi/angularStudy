@@ -1,25 +1,28 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { Shoe } from '../../models/user.protocol';
 import { ShoesDataComponent } from '../shoes-data/shoes-data.component';
-import { Form, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-shoes',
   standalone: true,
-  imports: [ShoesDataComponent, ReactiveFormsModule],
+  imports: [ShoesDataComponent, FormsModule],
   templateUrl: './shoes.component.html',
   styleUrl: './shoes.component.scss'
 })
 export class ShoesComponent {
   protected shoes!: Shoe[];
-  private cache!:Shoe[];
-  protected form: FormGroup;
+  private cache!: Shoe[];
 
-  constructor(formBuilder: FormBuilder) {
-    this.form = formBuilder.group({
-      query: []
-    })
+  query = signal("");
+
+  filterShoes = computed(() => {
+    return this.filterByQuery(this.query())
+  })
+
+  constructor() {
+
     if (this.shoes === undefined) {
       const worker = new Worker(new URL('../../app.worker', import.meta.url))
       worker.onmessage = ({ data }) => {
@@ -30,17 +33,13 @@ export class ShoesComponent {
     }
   }
 
-  protected searchByQuery() {
-    const query = this.form.get("query")?.value;
-    this.filterByQuery(query)
-  }
-
   private filterByQuery(query: string) {
     if (this.shoes) {
-      this.shoes = this.shoes.filter((shoe: Shoe) => shoe.name.includes(query))
+      return this.cache.filter((shoe: Shoe) => shoe.name.includes(query))
     }
-    if(query == ""){
-      this.shoes = this.cache
+    if (query == "") {
+      return this.cache
     }
+    return undefined;
   }
 }
