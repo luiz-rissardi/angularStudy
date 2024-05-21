@@ -4,11 +4,11 @@ import { ShoeDetailComponent } from './components/shoe-detail/shoe-detail.compon
 
 export const routes: Routes = [
     {
-        path:"home",
-        component:HomeComponent
-    }, 
+        path: "home",
+        loadComponent: () => import("./pages/home/home.component").then(e => e.HomeComponent)
+    },
     {
-        path:"shoe/:id",
-        component:ShoeDetailComponent
-    }  
+        path: "shoe/:id",
+        component: ShoeDetailComponent
+    }
 ];

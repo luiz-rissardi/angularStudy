@@ -18,6 +18,7 @@ export class ShoesComponent {
   query = signal("");
 
   filterShoes = computed(() => {
+    alert(this.query())
     return this.filterByQuery(this.query())
   })
 
