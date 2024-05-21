@@ -18,7 +18,6 @@ export class ShoesComponent {
   query = signal("");
 
   filterShoes = computed(() => {
-    alert(this.query())
     return this.filterByQuery(this.query())
   })
 
@@ -36,7 +35,7 @@ export class ShoesComponent {
 
   private filterByQuery(query: string) {
     if (this.shoes) {
-      return this.cache.filter((shoe: Shoe) => shoe.name.includes(query))
+      return this.cache.filter((shoe: Shoe) => shoe.name.toLocaleLowerCase().includes(query.toLocaleLowerCase()))
     }
     if (query == "") {
       return this.cache
