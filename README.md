@@ -67,3 +67,7 @@ usei para aprender e a usar eles, um componente indempendente usa os modulos que
       effect funciona da mesma forma mas não precisa ser chamado ali para ser executado
       , como é um efeito ele não precisa ser colocado em uma variável e chamado pra funcionar
 
+
+observações
+
+a usar loadComponent em rotas na Home para o carregamento atrasado, a performace dobrou no carregamento da pagina caindo mais da metade do tempo que antes estadava 
