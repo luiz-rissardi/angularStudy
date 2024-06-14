@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
-import { DataBaseShoesService } from '../../database/data-base-shoes.service';
-import { Shoe } from '../../models/user.protocol';
+import { DataBaseShoesService } from '../../../database/data-base-shoes.service';
+import { Shoe } from '../../../models/user.protocol';
 
 @Injectable()
 export class ShoesService {

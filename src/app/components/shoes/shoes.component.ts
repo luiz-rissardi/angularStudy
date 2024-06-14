@@ -1,13 +1,13 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { Shoe } from '../../models/user.protocol';
 import { ShoesDataComponent } from '../shoes-data/shoes-data.component';
 import { FormsModule } from '@angular/forms';
-
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
   selector: 'app-shoes',
   standalone: true,
-  imports: [ShoesDataComponent, FormsModule],
+  imports: [ShoesDataComponent, FormsModule, NgxSkeletonLoaderModule],
   templateUrl: './shoes.component.html',
   styleUrl: './shoes.component.scss'
 })

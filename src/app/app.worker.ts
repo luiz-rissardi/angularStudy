@@ -1,4 +1,4 @@
-import { ShoesService } from "./core/shoesService/shoes-service.service";
+import { ShoesService } from "./core/services/shoesService/shoes-service.service";
 
 const shoesService = new ShoesService()
 

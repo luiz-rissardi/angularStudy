@@ -2,20 +2,22 @@
     <form class="d-flex ms-auto w-50">
         <fieldset class="form-group w-100">
             <label for="search" class="form-label"> pesquisar por nome: </label>
-            <input type="text" id="search" class="form-control"  [ngModelOptions]="{standalone: true}" [(ngModel)]="this.query" >
+            <input type="text" id="search" class="form-control" [ngModelOptions]="{standalone: true}"
+                [(ngModel)]="this.query">
         </fieldset>
     </form>
 
     <div class="shoes">
+
         @defer (when this.shoes != undefined) {
-            <app-shoes-data [shoes]="this.filterShoes()" ></app-shoes-data>
-        }@placeholder(minimum 100ms;){
-        <span> carregando... </span>
+        <app-shoes-data [shoes]="this.filterShoes()"></app-shoes-data>
+        }@placeholder{
+        <ngx-skeleton-loader count="3" appearance="circle" animation="pulse"
+            [theme]="{width: '30%',height: '50vh', 'border-radius': '10px', margin: '1.5%'}">
+        </ngx-skeleton-loader>
         }
-        <!-- @loading(minimum 1200ms;){
-            <span> carregando animado ... </span>
-        } -->
+
+
     </div>
 
 </section>
-

@@ -1,9 +1,10 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ShoesService } from './core/shoesService/shoes-service.service';
+import { ShoesService } from './core/services/shoesService/shoes-service.service';
+import { TesteComponent } from './components/teste/teste.component';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,12 @@ import { ShoesService } from './core/shoesService/shoes-service.service';
   imports: [
     RouterOutlet,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TesteComponent
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  changeDetection:ChangeDetectionStrategy.Default
 })
 export class AppComponent implements OnInit {
   title = 'angularStudy';
