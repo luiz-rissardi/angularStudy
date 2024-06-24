@@ -3,7 +3,6 @@ import { ShoesService } from "./core/services/shoesService/shoes-service.service
 const shoesService = new ShoesService()
 
 addEventListener('message', async ({data}) => {
-  console.log(data);
   if(data.type == "getAll"){
     const result = await shoesService.getAll();
     postMessage(result);

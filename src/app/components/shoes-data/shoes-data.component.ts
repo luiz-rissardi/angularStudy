@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Shoe } from '../../models/user.protocol';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -8,7 +8,8 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './shoes-data.component.html',
-  styleUrl: './shoes-data.component.scss'
+  styleUrl: './shoes-data.component.scss',
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class ShoesDataComponent {
 

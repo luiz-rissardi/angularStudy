@@ -1,19 +1,24 @@
-import { Component, computed, signal } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild, computed, signal } from '@angular/core';
 import { Shoe } from '../../models/user.protocol';
 import { ShoesDataComponent } from '../shoes-data/shoes-data.component';
 import { FormsModule } from '@angular/forms';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { takeUntil, fromEvent, debounceTime, Subject, map } from 'rxjs';
 
 @Component({
   selector: 'app-shoes',
   standalone: true,
   imports: [ShoesDataComponent, FormsModule, NgxSkeletonLoaderModule],
   templateUrl: './shoes.component.html',
-  styleUrl: './shoes.component.scss'
+  styleUrl: './shoes.component.scss',
+  // changeDetection:ChangeDetectionStrategy.OnPush
 })
-export class ShoesComponent {
+export class ShoesComponent implements AfterViewInit, OnDestroy {
   protected shoes!: Shoe[];
   private cache!: Shoe[];
+
+  @ViewChild("inputSearch") private searchInput!: ElementRef;
+  private detroy = new Subject<void>();
 
   query = signal("");
 
@@ -31,6 +36,24 @@ export class ShoesComponent {
       };
       worker.postMessage({ type: "getAll" });
     }
+  }
+
+  ngOnDestroy(): void {
+    this.detroy.next();
+    this.detroy.complete();
+
+  }
+
+  ngAfterViewInit(): void {
+    fromEvent(this.searchInput.nativeElement, "input")
+      .pipe(
+        debounceTime(500),
+        map((value:any) => {
+          const queryValue = (value.target as HTMLInputElement).value; 
+          this.query.set(queryValue)
+        }),
+        takeUntil(this.detroy)
+      ).subscribe()
   }
 
   private filterByQuery(query: string) {

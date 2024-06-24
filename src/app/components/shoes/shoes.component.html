@@ -2,8 +2,7 @@
     <form class="d-flex ms-auto w-50">
         <fieldset class="form-group w-100">
             <label for="search" class="form-label"> pesquisar por nome: </label>
-            <input type="text" id="search" class="form-control" [ngModelOptions]="{standalone: true}"
-                [(ngModel)]="this.query">
+            <input type="text"  id="search" class="form-control" #inputSearch>
         </fieldset>
     </form>
 

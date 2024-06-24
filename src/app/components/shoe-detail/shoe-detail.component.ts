@@ -7,7 +7,7 @@ import { Shoe } from '../../models/user.protocol';
   imports: [],
   templateUrl: './shoe-detail.component.html',
   styleUrl: './shoe-detail.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShoeDetailComponent implements OnInit {
 
