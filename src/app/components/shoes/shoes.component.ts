@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild, computed, signal } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, ViewChild, computed, signal } from '@angular/core';
 import { Shoe } from '../../models/user.protocol';
 import { ShoesDataComponent } from '../shoes-data/shoes-data.component';
 import { FormsModule } from '@angular/forms';
@@ -11,9 +11,37 @@ import { takeUntil, fromEvent, debounceTime, Subject, map } from 'rxjs';
   imports: [ShoesDataComponent, FormsModule, NgxSkeletonLoaderModule],
   templateUrl: './shoes.component.html',
   styleUrl: './shoes.component.scss',
-  // changeDetection:ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class ShoesComponent implements AfterViewInit, OnDestroy {
+
+
+
+  responsaveis = [
+    {
+      id: 323,
+      nome: "luiz oliveira"
+    },
+    {
+      id: 343,
+      nome: "alan fabricio"
+    },
+    {
+      id: 421,
+      nome: "alana frazão"
+    },
+  ]
+
+  selectedValue = null;
+  usersSelects: any[] = [];
+
+  selectOption(event: any) {
+    const userId = event.target.value;
+    const user = this.responsaveis.filter(user => user.id == userId)[0];
+    this.usersSelects.push(user);
+  }
+
+
   protected shoes!: Shoe[];
   private cache!: Shoe[];
 
@@ -48,8 +76,8 @@ export class ShoesComponent implements AfterViewInit, OnDestroy {
     fromEvent(this.searchInput.nativeElement, "input")
       .pipe(
         debounceTime(500),
-        map((value:any) => {
-          const queryValue = (value.target as HTMLInputElement).value; 
+        map((value: any) => {
+          const queryValue = (value.target as HTMLInputElement).value;
           this.query.set(queryValue)
         }),
         takeUntil(this.detroy)
