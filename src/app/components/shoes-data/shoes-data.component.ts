@@ -11,7 +11,10 @@ import { RouterModule } from '@angular/router';
   styleUrl: './shoes-data.component.scss',
   changeDetection:ChangeDetectionStrategy.OnPush
 })
-export class ShoesDataComponent {
+export class ShoesDataComponent{
 
+  constructor(){
+    
+  }
   shoes = input<Shoe[] | undefined>();
 }
