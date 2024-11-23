@@ -10,8 +10,7 @@ import { takeUntil, fromEvent, debounceTime, Subject, map } from 'rxjs';
   standalone: true,
   imports: [ShoesDataComponent, FormsModule, NgxSkeletonLoaderModule],
   templateUrl: './shoes.component.html',
-  styleUrl: './shoes.component.scss',
-  changeDetection: ChangeDetectionStrategy.Default
+  styleUrl: './shoes.component.scss'
 })
 export class ShoesComponent implements AfterViewInit, OnDestroy {
 
