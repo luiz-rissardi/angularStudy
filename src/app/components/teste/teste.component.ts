@@ -3,12 +3,11 @@ import EventEmitter from 'events';
 import { Subject, delay, of } from 'rxjs';
 
 @Component({
-  selector: 'app-teste',
-  standalone: true,
-  imports: [],
-  templateUrl: './teste.component.html',
-  styleUrl: './teste.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-teste',
+    imports: [],
+    templateUrl: './teste.component.html',
+    styleUrl: './teste.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TesteComponent {
 

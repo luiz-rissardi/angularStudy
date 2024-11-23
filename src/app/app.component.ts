@@ -7,17 +7,16 @@ import { ShoesService } from './core/services/shoesService/shoes-service.service
 import { TesteComponent } from './components/teste/teste.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    TesteComponent
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  changeDetection:ChangeDetectionStrategy.Default
+    selector: 'app-root',
+    imports: [
+        RouterOutlet,
+        HeaderComponent,
+        FooterComponent,
+        TesteComponent
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    changeDetection: ChangeDetectionStrategy.Default
 })
 export class AppComponent implements OnInit {
   title = 'angularStudy';

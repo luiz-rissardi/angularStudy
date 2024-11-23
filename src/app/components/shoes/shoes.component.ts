@@ -6,11 +6,10 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { takeUntil, fromEvent, debounceTime, Subject, map } from 'rxjs';
 
 @Component({
-  selector: 'app-shoes',
-  standalone: true,
-  imports: [ShoesDataComponent, FormsModule, NgxSkeletonLoaderModule],
-  templateUrl: './shoes.component.html',
-  styleUrl: './shoes.component.scss'
+    selector: 'app-shoes',
+    imports: [ShoesDataComponent, FormsModule, NgxSkeletonLoaderModule],
+    templateUrl: './shoes.component.html',
+    styleUrl: './shoes.component.scss'
 })
 export class ShoesComponent implements AfterViewInit, OnDestroy {
 

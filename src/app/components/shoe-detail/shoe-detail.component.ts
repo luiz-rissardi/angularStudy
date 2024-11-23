@@ -2,12 +2,10 @@ import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core
 import { Shoe } from '../../models/user.protocol';
 
 @Component({
-  selector: 'app-shoe-detail',
-  standalone: true,
-  imports: [],
-  templateUrl: './shoe-detail.component.html',
-  styleUrl: './shoe-detail.component.scss',
-  // changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-shoe-detail',
+    imports: [],
+    templateUrl: './shoe-detail.component.html',
+    styleUrl: './shoe-detail.component.scss'
 })
 export class ShoeDetailComponent implements OnInit {
 
