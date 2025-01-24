@@ -43,6 +43,9 @@
           },
           "configurations": {
             "production": {
+              "aot": true,
+              "prerender":true,
+              "optimization": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -59,7 +62,10 @@
               "serviceWorker": "ngsw-config.json"
             },
             "development": {
-              "optimization": false,
+              "aot": true,
+              "optimization": true,
+              "ssr": true,
+              "prerender":true,
               "extractLicenses": false,
               "sourceMap": true
             }
