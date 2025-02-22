@@ -1,9 +1,10 @@
 import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Shoe } from '../../models/user.protocol';
+import { BtnStyleDirective } from '../../directives/btnStyle/btn-style.directive';
 
 @Component({
     selector: 'app-shoe-detail',
-    imports: [],
+    imports: [BtnStyleDirective],
     templateUrl: './shoe-detail.component.html',
     styleUrl: './shoe-detail.component.scss'
 })
