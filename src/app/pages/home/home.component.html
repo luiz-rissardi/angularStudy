@@ -9,6 +9,9 @@
             <div *not="teste">
                 <h1>eu sou a negação teste</h1>
             </div>
+            <p *for="lista; let item">
+                {{ item?.nome }}
+              </p>
         </article>
         <article class="d-flex flex-column">
             <h5 class="text-center"> A 
