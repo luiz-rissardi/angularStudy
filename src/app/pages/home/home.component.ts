@@ -3,15 +3,26 @@ import { ShoesPresentationComponent } from '../../components/shoes-presentation/
 import { ShoesComponent } from '../../components/shoes/shoes.component';
 import { NotDirective } from '../../directives/not/not.directive';
 import { ForDirective } from '../../directives/for/for.directive';
+import { Subject,interval } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-home',
-    imports: [ShoesPresentationComponent, ShoesComponent,NotDirective,ForDirective],
+    imports: [CommonModule,ShoesPresentationComponent, ShoesComponent,NotDirective,ForDirective],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'
 })
 export class HomeComponent {
     protected teste = false;
+    protected sub = new Subject<any>();
+
+    constructor(){
+        setTimeout(()=>{
+            this.sub.next({
+                nome:"luix"
+            })
+        },1000)
+    }
 
     protected lista = [
         {

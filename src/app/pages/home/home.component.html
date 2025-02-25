@@ -9,6 +9,7 @@
             <div *not="teste">
                 <h1>eu sou a negação teste</h1>
             </div>
+            <p>lol: {{ (sub | async)?.nome }}</p>
             <p *for="lista; let item">
                 {{ item?.nome }}
               </p>
