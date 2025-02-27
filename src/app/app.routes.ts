@@ -1,11 +1,15 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ShoeDetailComponent } from './components/shoe-detail/shoe-detail.component';
+import { testeResolver } from './resolvers/teste.resolver';
 
 export const routes: Routes = [
     {
         path: "home",
-        loadComponent: () => import("./pages/home/home.component").then(e => e.HomeComponent)
+        loadComponent: () => import("./pages/home/home.component").then(e => e.HomeComponent),
+        resolve:{
+            meuDado: testeResolver
+        }
     },
     {
         path: "shoe/:id",

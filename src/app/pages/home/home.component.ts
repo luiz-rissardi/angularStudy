@@ -3,8 +3,9 @@ import { ShoesPresentationComponent } from '../../components/shoes-presentation/
 import { ShoesComponent } from '../../components/shoes/shoes.component';
 import { NotDirective } from '../../directives/not/not.directive';
 import { ForDirective } from '../../directives/for/for.directive';
-import { Subject,interval } from 'rxjs';
+import { Observable, Subject,interval } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -15,8 +16,13 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent {
     protected teste = false;
     protected sub = new Subject<any>();
+    protected lol:Observable<any>
 
-    constructor(){
+    constructor(activatedRoute:ActivatedRoute){
+        this.lol = activatedRoute.snapshot.data["meuDado"]
+
+        console.log(this.lol);
+       
         setTimeout(()=>{
             this.sub.next({
                 nome:"luix"
