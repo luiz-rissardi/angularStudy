@@ -16,13 +16,8 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent {
     protected teste = false;
     protected sub = new Subject<any>();
-    protected lol:Observable<any>
 
-    constructor(activatedRoute:ActivatedRoute){
-        this.lol = activatedRoute.snapshot.data["meuDado"]
-
-        console.log(this.lol);
-       
+    constructor(){
         setTimeout(()=>{
             this.sub.next({
                 nome:"luix"

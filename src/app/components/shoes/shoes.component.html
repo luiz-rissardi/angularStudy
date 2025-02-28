@@ -8,8 +8,6 @@
 
     <div class="shoes">
 
-
-
         <label for="genero">Responsáveis:</label>
         <select class="form-control" (change)="this.selectOption($event)">
             <option value="0"> --Selecione-- </option>
@@ -26,7 +24,7 @@
 
 
 
-        @defer (when this.shoes != undefined) {
+        @defer (when this.shoes != undefined;  hydrate on hover) {
         <app-shoes-data [shoes]="this.filterShoes()"></app-shoes-data>
         }@placeholder{
         <ngx-skeleton-loader count="3" appearance="circle" animation="pulse"

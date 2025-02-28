@@ -26,9 +26,7 @@ export class ShoesService {
   teste(){
     return new Observable(sub => {
       sub.next("olah o teste")
-    }).pipe(
-      delay(2000)
-    )
+    })
   }
 
 }

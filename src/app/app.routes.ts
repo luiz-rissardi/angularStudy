@@ -7,9 +7,7 @@ export const routes: Routes = [
     {
         path: "home",
         loadComponent: () => import("./pages/home/home.component").then(e => e.HomeComponent),
-        resolve:{
-            meuDado: testeResolver
-        }
+        
     },
     {
         path: "shoe/:id",
