@@ -41,11 +41,8 @@
             },
             "webWorkerTsConfig": "tsconfig.worker.json"
           },
-          "configurations": {
+           "configurations": {
             "production": {
-              "aot": true,
-              "prerender":true,
-              "optimization": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -55,19 +52,25 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "5kb"
                 }
               ],
               "outputHashing": "all",
-              "serviceWorker": "ngsw-config.json"
+              "serviceWorker": "ngsw-config.json",
+              "optimization": true,
+              "extractLicenses": true,
+              "sourceMap": true,
+              "aot": true,
+              "prerender":true
+              
             },
             "development": {
-              "aot": true,
               "optimization": true,
+              "extractLicenses": true,
+              "sourceMap": true,
+              "aot": true,
               "ssr": true,
-              "prerender":true,
-              "extractLicenses": false,
-              "sourceMap": true
+              "prerender":true
             }
           },
           "defaultConfiguration": "production"

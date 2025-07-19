@@ -20,5 +20,4 @@ export class ShoeDetailComponent implements OnInit {
     };
     worker.postMessage({ type: "getOne", id: this.id });
   }
-
 }

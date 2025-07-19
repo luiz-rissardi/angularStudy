@@ -1,4 +1,4 @@
-@defer (on immediate; hydrate never) {
+
 <ul class="d-flex flex-column flex-md-row flex-wrap w-100">
     <li *ngFor="let shoe of this.shoes()" class="m-auto my-2 shoe">
         <a [routerLink]="['/shoe',shoe.id]">
@@ -19,4 +19,3 @@
         </a>
     </li>
 </ul>
-}

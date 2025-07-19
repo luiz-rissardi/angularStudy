@@ -12,8 +12,7 @@ import { RouterModule } from '@angular/router';
 })
 export class ShoesDataComponent{
 
-  constructor(){
-    
-  }
-  shoes = input<Shoe[] | undefined>();
+  shoes = input<Shoe[]>()
+
+  
 }

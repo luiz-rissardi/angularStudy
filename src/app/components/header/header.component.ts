@@ -1,11 +1,12 @@
-import { Component, ElementRef, Renderer2, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Renderer2, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-header',
     imports: [RouterModule],
     templateUrl: './header.component.html',
-    styleUrl: './header.component.scss'
+    styleUrl: './header.component.scss',
+    changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
 

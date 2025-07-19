@@ -1,7 +1,6 @@
 <section class="container d-flex">
-    @defer(when this.shoe != undefined ) {
     <div class="card card-style m-auto" style="height: 80vh; width: 35%;">
-        <img [src]="shoe.image" class="img-card-top" height="50%" alt="shoe image">
+        <img loading="lazy" [src]="shoe.image" class="img-card-top" height="50%" alt="shoe image">
         <div class="card-body text-white">
             <h2> {{ shoe.name }} </h2>
             <p> um preço acesível para <strong>TODOS </strong> </p>
@@ -11,7 +10,5 @@
             <button type="button" appBtnStyle> comprar </button>
         </div>
     </div>
-    }
-
 
 </section>

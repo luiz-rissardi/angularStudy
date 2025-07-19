@@ -15,7 +15,7 @@
             </p>
         </article>
         <article class="d-flex flex-column">
-            <h5 class="text-center"> A
+            <h5 class="text-center"> 
                 <img loading="lazy" class="w-25 m-auto" src="../../../assets/stars.png" alt="logotipo">
                 <br> esta com
                 voce
@@ -26,8 +26,11 @@
             <img loading="lazy" src="../../../assets/great-sneaker.webp" class="banner-img" alt="banner image sneaker">
         </div>
     </div>
-    @defer (on immediate; hydrate on hover) {
-    <app-shoes-presentation></app-shoes-presentation>
-    <app-shoes></app-shoes>
+    
+    @defer (hydrate on hover) {
+        <app-shoes-presentation></app-shoes-presentation>
+        <app-shoes></app-shoes>
     }
+
+
 </section>

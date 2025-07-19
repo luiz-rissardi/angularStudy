@@ -1,32 +1,17 @@
 <section class="d-flex flex-column">
-    <form class="d-flex ms-auto w-50">
+    <form class="d-flex ms-auto w-50 mb-4">
         <fieldset class="form-group w-100">
             <label for="search" class="form-label"> pesquisar por nome: </label>
-            <input type="text" id="search" class="form-control" #inputSearch>
+            <input type="text" id="search" class="form-control" [(ngModel)]="query">
         </fieldset>
     </form>
 
     <div class="shoes">
 
-        <label for="genero">Responsáveis:</label>
-        <select class="form-control" (change)="this.selectOption($event)">
-            <option value="0"> --Selecione-- </option>
-            @for (user of this.responsaveis; track $index) {
-            <option [value]="user.id" >{{ user.nome }}</option>
-            }
-        </select>
-
-
-        <h2> usuarios selecionados </h2>
-        @for (user of usersSelects; track $index) {
-            <p> {{ user.nome }} </p>
-        } 
-
-
-
-        @defer (when this.shoes != undefined;  hydrate on hover) {
-        <app-shoes-data [shoes]="this.filterShoes()"></app-shoes-data>
-        }@placeholder{
+        @defer (when this.shoes().length != 0;hydrate on hover) {
+            <app-shoes-data [shoes]="this.shoeSearchList()"></app-shoes-data>
+        }
+        @loading{
         <ngx-skeleton-loader count="3" appearance="circle" animation="pulse"
             [theme]="{width: '30%',height: '50vh', 'border-radius': '10px', margin: '1.5%'}">
         </ngx-skeleton-loader>
